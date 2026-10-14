@@ -54,7 +54,7 @@ ios-adblock/
 ### Komponenty
 
 **1. Aplikacja-kontener (`App/`)**
-- SwiftUI, minimalne iOS 16.
+- SwiftUI, minimalne iOS 16.4 (reguły generowane dla Safari 16.4).
 - Jeden ekran:
   - status każdego blokera (włączony/wyłączony) przez `SFContentBlockerManager.getStateOfContentBlocker(withIdentifier:)`;
   - data zbudowania list i liczba reguł na bloker, odczytane z `rules-manifest.json` dołączonego do zasobów aplikacji;
@@ -65,7 +65,7 @@ ios-adblock/
 **2. Rozszerzenia Content Blocker (`Blockers/*`)**
 - Każde zawiera standardowy `ContentBlockerRequestHandler` (szablon Apple), który zwraca `blockerList.json` z własnego bundla.
 - Suffiksy bundle ID: `.ads`, `.trackers`, `.cookies`. Nazwy widoczne w Safari: „Reklamy”, „Trackery”, „Cookies/RODO”.
-- Pliki `blockerList.json` są generowane w CI i nie są commitowane. W repo jest pusta tablica `[]` jako placeholder, żeby projekt budował się lokalnie.
+- Pliki `blockerList.json` są generowane w CI przed `xcodegen generate` i nie są commitowane (bez placeholderów w repo).
 
 **3. Listy filtrów (`filters/sources.json`)**
 
