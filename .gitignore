@@ -1,0 +1,9 @@
+# Generowane w CI
+Blockers/*/blockerList.json
+App/Resources/rules-manifest.json
+*.xcodeproj/
+Generated/
+build/
+tools/build-rules/.build/
+tools/build-rules/.swiftpm/
+.DS_Store
